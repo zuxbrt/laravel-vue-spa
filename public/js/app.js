@@ -5311,6 +5311,24 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_About_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/About.vue */ "./resources/js/Pages/About.vue"));
   },
   name: 'about'
+}, {
+  path: '/login',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/Login.vue */ "./resources/js/Pages/Login.vue"));
+  },
+  name: 'login'
+}, {
+  path: '/register',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Register_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/Register.vue */ "./resources/js/Pages/Register.vue"));
+  },
+  name: 'register'
+}, {
+  path: '*',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_NotFound_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/NotFound.vue */ "./resources/js/Pages/NotFound.vue"));
+  },
+  name: 'notfound'
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (routes);
 
@@ -5327,12 +5345,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 
-vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
-var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
+
+vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_2__["default"]);
+var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
   state: {
     count: 0
   },
@@ -44629,6 +44650,18 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -44659,7 +44692,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_About_vue":1,"resources_js_Components_Navbar_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_About_vue":1,"resources_js_Pages_Login_vue":1,"resources_js_Pages_Register_vue":1,"resources_js_Pages_NotFound_vue":1,"resources_js_Components_Navbar_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
