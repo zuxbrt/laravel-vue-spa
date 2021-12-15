@@ -1,9 +1,10 @@
 <template>
-  <nav class="navBar">
-    <ul class="navBar__link">
-      <li><router-link :to="{ name: 'about' }">About</router-link> </li>
-    </ul>
-  </nav>
+  <div class="navBar">
+      <div class="navBar__links">
+        <router-link class="link logo" :to="{ name: 'index' }"><img src="/images/laravel.svg"></router-link>
+        <router-link class="link" :to="{ name: 'about' }">About</router-link>
+      </div>
+  </div>
 </template>
 
 <script>

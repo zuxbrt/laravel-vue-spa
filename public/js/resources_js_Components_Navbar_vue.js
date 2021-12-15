@@ -19,6 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'navbar'
 });
@@ -109,18 +110,25 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("nav", { staticClass: "navBar" }, [
-    _c("ul", { staticClass: "navBar__link" }, [
-      _c(
-        "li",
-        [
-          _c("router-link", { attrs: { to: { name: "about" } } }, [
-            _vm._v("About"),
-          ]),
-        ],
-        1
-      ),
-    ]),
+  return _c("div", { staticClass: "navBar" }, [
+    _c(
+      "div",
+      { staticClass: "navBar__links" },
+      [
+        _c(
+          "router-link",
+          { staticClass: "link logo", attrs: { to: { name: "index" } } },
+          [_c("img", { attrs: { src: "/images/laravel.svg" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          { staticClass: "link", attrs: { to: { name: "about" } } },
+          [_vm._v("About")]
+        ),
+      ],
+      1
+    ),
   ])
 }
 var staticRenderFns = []
