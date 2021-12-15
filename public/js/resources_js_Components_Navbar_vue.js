@@ -20,6 +20,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'navbar'
 });
@@ -117,14 +120,20 @@ var render = function () {
       [
         _c(
           "router-link",
-          { staticClass: "link logo", attrs: { to: { name: "index" } } },
-          [_c("img", { attrs: { src: "/images/laravel.svg" } })]
+          { staticClass: "link", attrs: { to: { name: "about" } } },
+          [_vm._v("About")]
         ),
         _vm._v(" "),
         _c(
           "router-link",
-          { staticClass: "link", attrs: { to: { name: "about" } } },
-          [_vm._v("About")]
+          { staticClass: "link", attrs: { to: { name: "login" } } },
+          [_vm._v("Login")]
+        ),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          { staticClass: "link", attrs: { to: { name: "register" } } },
+          [_vm._v("Register")]
         ),
       ],
       1

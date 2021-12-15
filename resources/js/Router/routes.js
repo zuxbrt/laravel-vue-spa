@@ -14,6 +14,11 @@ const routes = [
       component: () => import('../Pages/Register.vue'),
       name: 'register'
     },
+    {
+      path: '/dahboard',
+      component: () => import('../Pages/Dashboard.vue'),
+      name: 'dashboard'
+    },
     { path: '*', component: () => import('../Pages/NotFound.vue'), name: 'notfound' }
   ]
   
