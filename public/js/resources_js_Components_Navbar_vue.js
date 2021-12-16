@@ -11,6 +11,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -23,8 +30,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'navbar'
+  name: 'navbar',
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(['isLogged'])),
+  methods: {
+    logout: function logout() {
+      this.$store.dispatch('logout');
+    }
+  }
 });
 
 /***/ }),
@@ -120,21 +139,41 @@ var render = function () {
       [
         _c(
           "router-link",
-          { staticClass: "link", attrs: { to: { name: "about" } } },
-          [_vm._v("About")]
+          { staticClass: "link logo", attrs: { to: { name: "index" } } },
+          [_c("img", { attrs: { src: "/images/laravel.svg" } })]
         ),
         _vm._v(" "),
-        _c(
-          "router-link",
-          { staticClass: "link", attrs: { to: { name: "login" } } },
-          [_vm._v("Login")]
-        ),
+        _vm.isLogged
+          ? _c(
+              "router-link",
+              { staticClass: "link", attrs: { to: { name: "home" } } },
+              [_vm._v("Home")]
+            )
+          : _vm._e(),
         _vm._v(" "),
-        _c(
-          "router-link",
-          { staticClass: "link", attrs: { to: { name: "register" } } },
-          [_vm._v("Register")]
-        ),
+        !_vm.isLogged
+          ? _c(
+              "router-link",
+              { staticClass: "link", attrs: { to: { name: "login" } } },
+              [_vm._v("Login")]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.isLogged
+          ? _c(
+              "button",
+              {
+                staticClass: "logout-btn",
+                attrs: { type: "button" },
+                on: {
+                  click: function ($event) {
+                    return _vm.logout()
+                  },
+                },
+              },
+              [_vm._v("\n        Logout\n      ")]
+            )
+          : _vm._e(),
       ],
       1
     ),

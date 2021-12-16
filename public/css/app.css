@@ -11334,3 +11334,46 @@ body {
 .page-title {
   color: #e9e9e9;
 }
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input.form-input {
+  display: block;
+  width: 200px;
+  margin: 4px auto;
+  background: white;
+  border: 1px solid red;
+  border-radius: 4px;
+  padding: 4px 8px;
+  height: 50px;
+}
+
+.form-button {
+  display: block;
+  width: 200px;
+  margin: 4px auto;
+  background: black;
+  outline: none;
+  border: 1px solid red;
+  height: 40px;
+  color: red;
+}
+
+.logout-btn {
+  display: block;
+  background: black;
+  color: red;
+  border: none;
+  margin-left: auto;
+  margin-right: 14px;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: white;
+  color: black;
+}

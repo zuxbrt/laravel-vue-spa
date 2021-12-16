@@ -11,25 +11,28 @@ use Illuminate\Support\Facades\Session;
 class APIController extends Controller
 {
     public function login(Request $request){
-        $credentials = [
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
 
-        if (Auth::attempt($credentials)) {
-            $success = true;
-            $message = 'User login successfully';
-        } else {
-            $success = false;
-            $message = 'Unauthorised';
+        $data = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return response([
+                'message' => ['These credentials do not match our records.']
+            ], 404);
         }
 
-        // response
+        $token = $user->createToken('my-app-token')->plainTextToken;
+
         $response = [
-            'success' => $success,
-            'message' => $message,
+            'user' => $user,
+            'token' => $token
         ];
-        return response()->json($response);
+    
+        return response($response, 201);
     }
 
     public function register(Request $request){

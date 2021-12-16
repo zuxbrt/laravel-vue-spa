@@ -1,13 +1,13 @@
 <template>
   <div class="page-container">
     <h2 class="page-title">
-      About Page
+      Homepage
     </h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'about'
+  name: 'home',
 }
 </script>

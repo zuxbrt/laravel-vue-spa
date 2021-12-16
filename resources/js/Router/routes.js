@@ -1,24 +1,36 @@
 const routes = [
     {
-      path: '/about',
-      component: () => import('../Pages/About.vue'),
-      name: 'about'
+      path: '/',
+      component: () => import('../Pages/Index.vue'),
+      name: 'index',
+      meta: {
+        restricted: false
+      }
+    },
+    {
+      path: '/home',
+      component: () => import('../Pages/Home.vue'),
+      name: 'home',
+      meta: {
+        restricted: true
+      }
     },
     {
       path: '/login',
       component: () => import('../Pages/Login.vue'),
-      name: 'login'
+      name: 'login',
+      meta: {
+        restricted: false
+      }
     },
-    {
-      path: '/register',
-      component: () => import('../Pages/Register.vue'),
-      name: 'register'
-    },
-    {
-      path: '/dahboard',
-      component: () => import('../Pages/Dashboard.vue'),
-      name: 'dashboard'
-    },
+    // {
+    //   path: '/register',
+    //   component: () => import('../Pages/Register.vue'),
+    //   name: 'register',
+    //   meta: {
+    //     restricted: false
+    //   }
+    // },
     { path: '*', component: () => import('../Pages/NotFound.vue'), name: 'notfound' }
   ]
   

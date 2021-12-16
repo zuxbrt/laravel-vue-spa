@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'user',
-            'email' => 'user@test.com',
+            'email' => 'user@purplematrix.co.uk',
             'email_verified_at' => Carbon::now(),
-            'password' => Hash::make('test1234'),
+            'password' => Hash::make('User1234!'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
