@@ -25,10 +25,7 @@ __webpack_require__.r(__webpack_exports__);
       name: null
     };
   },
-  created: function created() {// if (window.Laravel.user) {
-    //     this.name = window.Laravel.user.name
-    // }
-  }
+  created: function created() {}
 });
 
 /***/ }),

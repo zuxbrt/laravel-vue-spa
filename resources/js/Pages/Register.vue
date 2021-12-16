@@ -70,35 +70,6 @@ export default {
         error: null
     }
   },
-  methods: {
-    handleSubmit(e) {
-        e.preventDefault()
-        if (this.password.length > 0) {
-            axios.get('/sanctum/csrf-cookie').then(response => {
-                axios.post('api/register', {
-                    name: this.name,
-                    email: this.email,
-                    password: this.password
-                })
-                    .then(response => {
-                        if (response.data.success) {
-                            window.location.href = "/login"
-                        } else {
-                            this.error = response.data.message
-                        }
-                    })
-                    .catch(function (error) {
-                        console.error(error);
-                    });
-            })
-        }
-    }
-  },
-  beforeRouteEnter(to, from, next) {
-    //   if (window.Laravel.isLoggedin) {
-    //       return next('dashboard');
-    //   }
-      next();
-  }
+  methods: {}
 }
 </script>

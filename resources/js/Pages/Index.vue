@@ -13,10 +13,6 @@ export default {
             name: null,
         }
     },
-    created() {
-        // if (window.Laravel.user) {
-        //     this.name = window.Laravel.user.name
-        // }
-    },
+    created() {},
 }
 </script>
